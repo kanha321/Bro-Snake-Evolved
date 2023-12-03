@@ -1,5 +1,5 @@
 # Bro-Snake-Evolved
-The old nokia snake game, recreated in Kotlin. This snake game is originally created by Bro Code (in java), but that was only a basic snake game
+The old nokia snake game, recreated in Kotlin. This snake game is originally created by [Bro Code](https://www.youtube.com/watch?v=bI6e6qjJ8JQ) (in java), but that was only a basic snake game
 
 ## How is it different from Bro Code's snake game?
 #### First let see what features does Bro Code's snake game have:
@@ -13,6 +13,7 @@ The old nokia snake game, recreated in Kotlin. This snake game is originally cre
 ## New Features added: (From Nokia, of course)
 
 - Changed: Bye Bye Java, Now it's Kotlin (completely rewritten in Kotlin)
+- Added: png icons for small and big apples
 - Added: Snake can go through the walls and appear on the other side instead of just dying
 - Added: big bonus apple after every 5 apples eaten
 - Added: Bonus apple timer at the bottom of the screen
@@ -21,7 +22,7 @@ The old nokia snake game, recreated in Kotlin. This snake game is originally cre
 - Added: WASD key inputs for movement along with arrow keys
 - Added: Death animation (snake will shrink and that body part will turn red)
 - Fixed: Apples will not appear on the snake's body
-- Fixed: Maximum x and y array max length
+- Fixed: x and y array max length
 
 - Following new key inputs are added:
   - P: Pause/Resume the game
