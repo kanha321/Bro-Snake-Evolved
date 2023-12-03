@@ -13,6 +13,7 @@ The old nokia snake game, recreated in Kotlin. This snake game is originally cre
 ## New Features added: (From Nokia, of course)
 
 - Changed: Bye Bye Java, Now it's Kotlin (completely rewritten in Kotlin)
+- Added: png icons for small and big apples
 - Added: Snake can go through the walls and appear on the other side instead of just dying
 - Added: big bonus apple after every 5 apples eaten
 - Added: Bonus apple timer at the bottom of the screen
