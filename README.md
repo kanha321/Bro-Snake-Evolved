@@ -1,6 +1,8 @@
 # Bro-Snake-Evolved
 The old nokia snake game, recreated in Kotlin. This snake game is originally created by Bro Code (in java), but that was only a basic snake game
 
+[Bro Code's Video](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
+
 ## How is it different from Bro Code's snake game?
 #### First let see what features does Bro Code's snake game have:
 - Snake can move in 4 directions
