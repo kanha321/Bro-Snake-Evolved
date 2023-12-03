@@ -21,7 +21,7 @@ The old nokia snake game, recreated in Kotlin. This snake game is originally cre
 - Added: WASD key inputs for movement along with arrow keys
 - Added: Death animation (snake will shrink and that body part will turn red)
 - Fixed: Apples will not appear on the snake's body
-- Fixed: Maximum x and y array max length
+- Fixed: x and y array max length
 
 - Following new key inputs are added:
   - P: Pause/Resume the game
