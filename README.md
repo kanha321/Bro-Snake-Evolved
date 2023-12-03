@@ -48,3 +48,6 @@ And many more under the hood changes and bug fixes...
 
 
 This is gonna improve a lot in the future...
+
+# Installation
+#### git clone this repo or download it
