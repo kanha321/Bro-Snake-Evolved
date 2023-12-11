@@ -1,3 +1,5 @@
+package game
+
 import java.awt.*
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
@@ -258,7 +260,7 @@ class GamePanel : JPanel(), ActionListener {
     fun bigAppleTimer2(g: Graphics) {
         g.color = Color(210, 144, 0, 180)
         g.font = Font("Monotype Corsiva", Font.PLAIN, 40)
-        g.drawString(bigAppleTimeLeft.toString() + "", screenWidth - 100, screenHeight - 30)
+        g.drawString(bigAppleTimeLeft.toString(), screenWidth - 100, screenHeight - 30)
     }
 
     fun displayScore(g: Graphics) {
