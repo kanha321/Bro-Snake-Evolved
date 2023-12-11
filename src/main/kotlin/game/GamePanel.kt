@@ -45,9 +45,8 @@ class GamePanel : JPanel(), ActionListener {
     var stopMovement = false
     var timer: Timer? = null
     var random: Random? = null
-    private val appleImg: Image = ImageIO.read(GamePanel::class.java.getResource("/apple2.png"))
+    private val appleImg: Image = ImageIO.read(GamePanel::class.java.getResource("/food_apple.png"))
     private val bigAppleImg: Image = ImageIO.read(GamePanel::class.java.getResource("/bigApple.png"))
-    private val snakeHeadImg: Image = ImageIO.read(GamePanel::class.java.getResource("/snakeHead.jpg"))
 
     init {
         random = Random()
@@ -244,7 +243,7 @@ class GamePanel : JPanel(), ActionListener {
 
     fun bigAppleTimer(g: Graphics){
         bigAppleTimer1(g)
-        bigAppleTimer2(g)
+//        bigAppleTimer2(g)
     }
     fun bigAppleTimer1(g: Graphics) {
         var i = 0
