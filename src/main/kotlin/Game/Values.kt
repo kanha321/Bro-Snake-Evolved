@@ -1,12 +1,15 @@
-import game.GamePanelBak
+package Game
+
+import backups.GamePanelBak
+import utils.SCREEN_HEIGHT
+import utils.SCREEN_WIDTH
+import utils.getImage
 import java.awt.Image
 import java.util.*
 import javax.imageio.ImageIO
 import javax.swing.Timer
 
 // general
-const val SCREEN_WIDTH = 800
-const val SCREEN_HEIGHT = 600
 const val UNIT_SIZE = 25
 const val GAME_UNITS = (SCREEN_WIDTH * SCREEN_HEIGHT) / UNIT_SIZE * UNIT_SIZE
 const val DELAY = 15
@@ -62,20 +65,20 @@ var stPaused = "Paused"
 var stGameOver = "Game Over!!"
 var stWatermark = "!Bro-Snake-Evolved!"
 
-private val appleImg: Image = getImage("/food_apple.png")
+private val appleImg: Image = getImage("/Food/apple.png")
 private val bigAppleImg: Image = getImage("/bigApple.png")
 
 val foodImgs = arrayOf(
-    getImage("/food_apple.png"),
-    getImage("/food_banana.png"),
-    getImage("/food_cherry.png"),
-    getImage("/food_strawberry.png"),
+    getImage("/Food/apple.png"),
+    getImage("/Food/banana.png"),
+    getImage("/Food/cherry.png"),
+    getImage("/Food/strawberry.png"),
 )
 
 val powerUpImgs = arrayOf(
-    getImage("/power_swap.png"),
-    getImage("/power_turbo.png"),
-    getImage("/power_slow.png"),
+    getImage("/PowerUp/swap.png"),
+    getImage("/PowerUp/turbo.png"),
+    getImage("/PowerUp/slow.png"),
 
 //        getImage("/power_ghost.png"),
 //        getImage("/power_life.png"),
@@ -86,5 +89,3 @@ fun getRandom(bound: Int): Int = random.nextInt(bound)
 fun forceInit() {
     random = Random()
 }
-
-private fun getImage(fileName: String): Image = ImageIO.read(GamePanelBak::class.java.getResource(fileName))

@@ -1,16 +1,19 @@
+package Game
+
+import utils.SCREEN_HEIGHT
+import utils.SCREEN_WIDTH
 import java.awt.event.ActionListener
 import javax.swing.Timer
 
 fun startGame(actionListener: ActionListener) {
     newPowerUp()
     newFood()
-    running = true
     timer = Timer(DELAY, actionListener)
     timer!!.start()
 }
 
 
-fun restartGame(actionListener: ActionListener) {
+fun restartGame() {
     bodyParts = INITIAL_BODY_PARTS
     scoreCount = 0
     appleAfterPowerUp = 0
@@ -25,7 +28,9 @@ fun restartGame(actionListener: ActionListener) {
     }
     direction = 'r'
     gameOver = false
-    startGame(actionListener)
+    running = true
+    newFood()
+    newPowerUp()
 }
 
 fun newFood() {

@@ -1,3 +1,7 @@
+package Game
+
+import utils.SCREEN_HEIGHT
+import utils.SCREEN_WIDTH
 import java.awt.Color
 import java.awt.Font
 import java.awt.Graphics
@@ -48,6 +52,10 @@ fun gameOver(g: Graphics) {
     g.drawString(stGameOver, (SCREEN_WIDTH - g.fontMetrics.stringWidth(stGameOver)) / 2, SCREEN_HEIGHT / 2)
     restartPrompt(g)
 }
+
+//fun homeScreen(g: Graphics) {
+//    homeScreen.paint(g)
+//}
 
 fun waterMark(g: Graphics) {
     g.color = Color(255, 255, 255, 50)

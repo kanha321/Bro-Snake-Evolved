@@ -1,47 +1,19 @@
-package game
+package Game
 
-import DELAY
-import INITIAL_BODY_PARTS
-import SCREEN_HEIGHT
-import SCREEN_WIDTH
-import SPEED
-import bodyParts
-import checkFood
-import checkCollision
-import checkPowerUp
-import die
-import direction
-import draw
-import forceInit
-import gameOver
-import move
-import newPowerUp
-import powerUpTimeLeft
-import restartGame
-import running
-import showPowerUp
-import speedCheck
-import startGame
-import stopMovement
-import timer
-import java.awt.Color
-import java.awt.Dimension
+import utils.SnakeFrame
+import utils.SnakePanel
 import java.awt.Graphics
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.awt.event.KeyAdapter
 import java.awt.event.KeyEvent
-import javax.swing.JPanel
-import kotlin.system.exitProcess
 
-class GamePanel : JPanel(), ActionListener {
+class Panel(private val gameFrame: SnakeFrame) : SnakePanel(), ActionListener {
 
     init {
         forceInit()
         val keyAd = Controls()
-        this.preferredSize = Dimension(SCREEN_WIDTH, SCREEN_HEIGHT)
-        setBackground(Color(0))
-        setFocusable(true)
+        isFocusable = true
         addKeyListener(keyAd)
         startGame(this)
     }
@@ -71,7 +43,7 @@ class GamePanel : JPanel(), ActionListener {
         repaint()
     }
 
-    inner class Controls: KeyAdapter() {
+    inner class Controls : KeyAdapter() {
         override fun keyPressed(e: KeyEvent) {
             when (e.keyCode) {
                 KeyEvent.VK_W -> if (direction != 'd' && !stopMovement) direction = 'u'
@@ -88,12 +60,14 @@ class GamePanel : JPanel(), ActionListener {
                     if (!running) {
                         running = true
                         bodyParts = INITIAL_BODY_PARTS
-                        restartGame(this@GamePanel)
+                        restartGame()
+                        startGame(this@Panel)
                     }
                 }
 
                 KeyEvent.VK_ESCAPE -> {
-                    exitProcess(0)
+                    running = false
+                    gameFrame.switchToHome()
                 }
 
                 KeyEvent.VK_P -> {
@@ -110,7 +84,8 @@ class GamePanel : JPanel(), ActionListener {
 
                 KeyEvent.VK_F2 -> {
                     timer!!.stop()
-                    restartGame(this@GamePanel)
+                    restartGame()
+                    startGame(this@Panel)
                 }
             }
         }
