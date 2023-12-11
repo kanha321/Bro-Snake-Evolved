@@ -1,4 +1,4 @@
-import game.GamePanel
+import game.GamePanelBak
 import java.awt.Image
 import java.util.*
 import javax.imageio.ImageIO
@@ -61,11 +61,9 @@ var stPausePrompt = "Press SPACE to resume"
 var stPaused = "Paused"
 var stGameOver = "Game Over!!"
 var stWatermark = "!Bro-Snake-Evolved!"
-var stScore = "score: $scoreCount"
 
-
-private val appleImg: Image = ImageIO.read(GamePanel::class.java.getResource("/food_apple.png"))
-private val bigAppleImg: Image = ImageIO.read(GamePanel::class.java.getResource("/bigApple.png"))
+private val appleImg: Image = getImage("/food_apple.png")
+private val bigAppleImg: Image = getImage("/bigApple.png")
 
 val foodImgs = arrayOf(
     getImage("/food_apple.png"),
@@ -79,8 +77,8 @@ val powerUpImgs = arrayOf(
     getImage("/power_turbo.png"),
     getImage("/power_slow.png"),
 
-//        getImage("/powerup_ghost.png"),
-//        getImage("/powerup_life.png"),
+//        getImage("/power_ghost.png"),
+//        getImage("/power_life.png"),
 )
 
 fun getRandom(bound: Int): Int = random.nextInt(bound)
@@ -89,4 +87,4 @@ fun forceInit() {
     random = Random()
 }
 
-private fun getImage(fileName: String): Image = ImageIO.read(GamePanel::class.java.getResource(fileName))
+private fun getImage(fileName: String): Image = ImageIO.read(GamePanelBak::class.java.getResource(fileName))

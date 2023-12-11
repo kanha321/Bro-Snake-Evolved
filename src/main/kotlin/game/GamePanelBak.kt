@@ -14,7 +14,7 @@ import kotlin.system.exitProcess
 
 
 
-class GamePanel : JPanel(), ActionListener {
+class GamePanelBak : JPanel(), ActionListener {
     val screenWidth = 800
     val screenHeight = 600
     val unitSize = 25
@@ -47,8 +47,8 @@ class GamePanel : JPanel(), ActionListener {
     var stopMovement = false
     var timer: Timer? = null
     var random: Random? = null
-    private val appleImg: Image = ImageIO.read(GamePanel::class.java.getResource("/food_apple.png"))
-    private val bigAppleImg: Image = ImageIO.read(GamePanel::class.java.getResource("/bigApple.png"))
+    private val appleImg: Image = ImageIO.read(GamePanelBak::class.java.getResource("/food_apple.png"))
+    private val bigAppleImg: Image = ImageIO.read(GamePanelBak::class.java.getResource("/bigApple.png"))
 
     init {
         random = Random()

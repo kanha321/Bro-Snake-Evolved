@@ -4,7 +4,7 @@ import javax.swing.JFrame
 
 class GameFrame : JFrame(){
     init {
-        val panel = GamePanel2()
+        val panel = GamePanel()
         this.add(panel)
         this.title = "SnakeGame (powered by Kotlin)"
         this.pack()
