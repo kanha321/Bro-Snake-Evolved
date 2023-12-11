@@ -81,30 +81,30 @@ fun checkPowerUp() {
 
 fun applyPowerUp() {
     when (powerUpIndex) {
-        0, 1, 2 -> {   // swap
-            val tempX = IntArray(bodyParts)
-            val tempY = IntArray(bodyParts)
-
-            // Store the current positions
-            for (i in 0..<bodyParts) {
-                tempX[i] = x[i]
-                tempY[i] = y[i]
-            }
-
-            // Reverse the positions
-            for (i in 0..<bodyParts) {
-                x[i] = tempX[bodyParts - i - 1]
-                y[i] = tempY[bodyParts - i - 1]
-            }
+//        0, 1, 2 -> {   // swap
+//            val tempX = IntArray(bodyParts)
+//            val tempY = IntArray(bodyParts)
+//
+//            // Store the current positions
+//            for (i in 0..<bodyParts) {
+//                tempX[i] = x[i]
+//                tempY[i] = y[i]
+//            }
+//
+//            // Reverse the positions
+//            for (i in 0..<bodyParts) {
+//                x[i] = tempX[bodyParts - i - 1]
+//                y[i] = tempY[bodyParts - i - 1]
+//            }
 
             // Reverse the direction
-            when (direction) {
-                'r' -> direction = 'l'
-                'l' -> direction = 'r'
-                'u' -> direction = 'd'
-                'd' -> direction = 'u'
-            }
-        }
+//            when (direction) {
+//                'r' -> direction = 'l'
+//                'l' -> direction = 'r'
+//                'u' -> direction = 'd'
+//                'd' -> direction = 'u'
+//            }
+//        }
     }
 }
 

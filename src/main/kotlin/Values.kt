@@ -16,13 +16,13 @@ var tailDirection = 'r'
 // snake
 val x = IntArray(GAME_UNITS)
 val y = IntArray(GAME_UNITS)
-const val INITIAL_BODY_PARTS = 14
+const val INITIAL_BODY_PARTS = 5
 var bodyParts = INITIAL_BODY_PARTS
 
 // power up
 const val POWER_UP_SIZE = 3
 const val POWER_UP_UNIT_SIZE = POWER_UP_SIZE * UNIT_SIZE
-const val POWER_UP_FREQUENCY = 0
+const val POWER_UP_FREQUENCY = 5
 const val POWER_UP_TIMER = 5000
 var powerUpTimeLeft = POWER_UP_TIMER
 var powerUpX = 0
@@ -88,8 +88,5 @@ fun getRandom(bound: Int): Int = random.nextInt(bound)
 fun forceInit() {
     random = Random()
 }
-
-//fun getFoodImg(): Image = foodImgs[getRandom(foodImgs.size)]
-//fun getPowerupImg(): Image = powerupImgs[getRandom(powerupImgs.size)]
 
 private fun getImage(fileName: String): Image = ImageIO.read(GamePanel::class.java.getResource(fileName))
