@@ -11,3 +11,12 @@
     fixed minor bugs
     incomplete HomeScreen for now
     no issues in the game
+
+[10:19 PM 13/Dec/2023] v2.0.0 beta 1.0.1
+    added HomePanel form
+    added TransparentButton
+    added ImagePanel
+    *not yet tested*
+
+[12:16 AM 14/Dec/2023] v2.0.0 beta 1.0.2
+    so lost, I'm faded ╥﹏╥

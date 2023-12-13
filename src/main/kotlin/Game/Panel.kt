@@ -67,7 +67,7 @@ class Panel(private val gameFrame: SnakeFrame) : SnakePanel(), ActionListener {
 
                 KeyEvent.VK_ESCAPE -> {
                     running = false
-                    gameFrame.switchToHome()
+//                    gameFrame.switchToHome()
                 }
 
                 KeyEvent.VK_P -> {
