@@ -14,5 +14,5 @@
 
     *BUG*: some of the bottom part of game panel is not visible
 
-    needs Cleanups
+    needs Cleanup
 
