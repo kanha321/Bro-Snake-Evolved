@@ -1,14 +1,17 @@
-package Game
+package game
 
-import utils.SnakeFrame
-import utils.SnakePanel
+import utils.*
+import java.awt.CardLayout
 import java.awt.Graphics
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.awt.event.KeyAdapter
 import java.awt.event.KeyEvent
 
-class Panel(private val gameFrame: SnakeFrame) : SnakePanel(), ActionListener {
+class Panel(
+    private var cardLayout: CardLayout,
+    private var cardPanel: SnakePanel
+) : SnakePanel(), ActionListener {
 
     init {
         forceInit()
@@ -67,7 +70,8 @@ class Panel(private val gameFrame: SnakeFrame) : SnakePanel(), ActionListener {
 
                 KeyEvent.VK_ESCAPE -> {
                     running = false
-                    gameFrame.switchToHome()
+                    timer!!.stop()
+                    cardLayout.show(cardPanel, "Home")
                 }
 
                 KeyEvent.VK_P -> {

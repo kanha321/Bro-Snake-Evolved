@@ -1,8 +1,7 @@
-package Home
+package home
 
-import Game.restartGame
+import game.restartGame
 import utils.SCREEN_HEIGHT
-import utils.SCREEN_WIDTH
 import utils.SnakeFrame
 import utils.SnakePanel
 import java.awt.Color
@@ -59,6 +58,10 @@ class Panel(private val gameFrame: SnakeFrame) : SnakePanel(), ActionListener {
 
     override fun paintComponent(g: Graphics) {
         super.paintComponent(g)
+        draw(g)
+    }
+
+    private fun draw(g: Graphics){
         val imageWidth = backgroundImage.getWidth(null)
         val imageHeight = backgroundImage.getHeight(null)
         val x = (width - imageWidth) / 2
@@ -68,12 +71,12 @@ class Panel(private val gameFrame: SnakeFrame) : SnakePanel(), ActionListener {
 
     override fun actionPerformed(e: ActionEvent?) {
 
-        if (e!!.source === btStartGame) {
-            gameFrame.switchToGame()
-            restartGame()
-        }
-        if (e!!.source === btExitGame) {
-            exitProcess(0)
-        }
+//        if (e!!.source === btStartGame) {
+//            gameFrame.switchToGame()
+//            restartGame()
+//        }
+//        if (e!!.source === btExitGame) {
+//            exitProcess(0)
+//        }
     }
 }

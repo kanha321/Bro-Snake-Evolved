@@ -1,9 +1,7 @@
 package utils
 
-import Game.Panel
-import backups.GamePanelBak
+import game.Panel
 import java.awt.Image
-import java.io.File
 import javax.imageio.ImageIO
 
 const val SCREEN_WIDTH = 800

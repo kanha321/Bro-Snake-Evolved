@@ -1,4 +1,4 @@
-package GameOver
+package gameOver
 
 import utils.SnakeFrame
 import utils.SnakePanel

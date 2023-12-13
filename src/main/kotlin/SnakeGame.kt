@@ -1,5 +1,5 @@
-import utils.SnakeFrame
+import home.Menu
 
 fun main() {
-    SnakeFrame()
+    Menu()
 }

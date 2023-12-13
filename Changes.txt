@@ -5,3 +5,14 @@
     re-organized code (added util package and shifted some properties like SCREEN_WIDTH and SCREEN_HEIGHT to the utils.Values)
     re-organized resources (added resources package)
     added SnakePanel class
+
+
+[12:16 PM 13/Dec/2023] v2.0.0 preparation 3
+    homeScreen build with gui form
+    added proper home screen panel
+    linked home screen panel to game panel
+
+    *BUG*: some of the bottom part of game panel is not visible
+
+    needs Cleanups
+

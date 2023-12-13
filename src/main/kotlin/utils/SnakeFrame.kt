@@ -1,13 +1,13 @@
 package utils
+import game.timer
 import javax.swing.JFrame
 
 class SnakeFrame : JFrame() {
-    private val gameScreen = Game.Panel(this)
-    private val homeScreen = Home.Panel(this)
-    private val gameOverScreen = GameOver.Panel(this)
+//    private val gameScreen = game.Panel(this)
+    private val homeScreen = home.Panel(this)
 
     init {
-        this.add(homeScreen)
+        this.contentPane = homeScreen
         this.title = "SnakeGame (powered by Kotlin)"
         this.pack()
         this.isResizable = false
@@ -16,18 +16,19 @@ class SnakeFrame : JFrame() {
         this.setLocationRelativeTo(null)
     }
 
-    fun switchToGame() {
-        this.remove(homeScreen)
-        this.add(gameScreen)
-        this.revalidate()
-        this.repaint()
-        gameScreen.requestFocusInWindow()
-    }
-    fun switchToHome() {
-        this.remove(gameScreen)
-        this.add(homeScreen)
-        this.revalidate()
-        this.repaint()
-        homeScreen.requestFocusInWindow()
-    }
+//    fun switchToGame() {
+//        this.remove(homeScreen)
+//        this.contentPane = gameScreen
+//        if (!timer!!.isRunning) timer!!.start()
+//        this.revalidate()
+//        this.repaint()
+//        gameScreen.requestFocusInWindow()
+//    }
+//    fun switchToHome() {
+//        this.remove(gameScreen)
+//        this.contentPane = homeScreen
+//        this.revalidate()
+//        this.repaint()
+//        homeScreen.requestFocusInWindow()
+//    }
 }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="home.Menu">
+  <grid id="27dc6" binding="panel1" custom-create="true" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="50" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="268cd" class="javax.swing.JButton" binding="startGameButton" custom-create="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="100" height="20"/>
+            <preferred-size width="250" height="60"/>
+            <maximum-size width="800" height="80"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16119023"/>
+          <focusable value="false"/>
+          <font name="Comic Sans MS" size="22"/>
+          <foreground color="-1"/>
+          <text value="Start Game"/>
+        </properties>
+      </component>
+      <vspacer id="34e13">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="79ff6" class="javax.swing.JButton" binding="highScoresButton" custom-create="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="100" height="20"/>
+            <preferred-size width="250" height="60"/>
+            <maximum-size width="800" height="80"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16119023"/>
+          <focusable value="false"/>
+          <font name="Comic Sans MS" size="22"/>
+          <foreground color="-1"/>
+          <text value="High Scores"/>
+        </properties>
+      </component>
+      <component id="9e64a" class="javax.swing.JButton" binding="settingsButton" custom-create="true" default-binding="true">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="100" height="20"/>
+            <preferred-size width="250" height="60"/>
+            <maximum-size width="800" height="80"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16119023"/>
+          <focusable value="false"/>
+          <font name="Comic Sans MS" size="22"/>
+          <foreground color="-1"/>
+          <text value="Settings"/>
+        </properties>
+      </component>
+      <component id="bd350" class="javax.swing.JButton" binding="exitGameButton" custom-create="true" default-binding="true">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="100" height="20"/>
+            <preferred-size width="250" height="60"/>
+            <maximum-size width="800" height="80"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16119023"/>
+          <focusable value="false"/>
+          <font name="Comic Sans MS" size="22"/>
+          <foreground color="-1"/>
+          <margin top="0" left="0" bottom="0" right="0"/>
+          <text value="Exit Game"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
