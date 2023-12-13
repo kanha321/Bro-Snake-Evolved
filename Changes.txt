@@ -1,7 +1,13 @@
-[07:47 PM 12/Dec/2023]  v2.0.0 preparation 2
+[07:47 PM 11/Dec/2023]  v2.0.0 preparation 2
     added multiple panels
     added background graphics for home screen
     random foods and powerUps graphics
     re-organized code (added util package and shifted some properties like SCREEN_WIDTH and SCREEN_HEIGHT to the utils.Values)
     re-organized resources (added resources package)
     added SnakePanel class
+
+[08:28 PM 13/Dec/2023] v2.0.0 beta 1
+    same as v2.0.0 preparation 2
+    fixed minor bugs
+    incomplete HomeScreen for now
+    no issues in the game

@@ -1,12 +1,10 @@
 package Game
 
-import backups.GamePanelBak
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH
 import utils.getImage
 import java.awt.Image
 import java.util.*
-import javax.imageio.ImageIO
 import javax.swing.Timer
 
 // general
