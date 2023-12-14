@@ -3,39 +3,49 @@ package Home;
 import custom.ImagePanel;
 import custom.TransparentButton;
 import utils.SnakePanel;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import static utils.ValuesKt.*;
 
 public class HomePanel {
 
-    public JButton button1;
+    public JButton startButton;
     private JPanel imagePanel;
     private JPanel panel1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
+    private JButton highScoreButton;
+    private JButton settingsButton;
+    private JButton exitButton;
     private JPanel panel2;
 
-    public HomePanel() {
-        panel1.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-        button1.addActionListener(e -> {
-            switchPanel(panel1, new Game.Panel());
-        });
-        button4.addActionListener(e -> System.exit(0));
-    }
+    public HomePanel() {}
 
     private void createUIComponents() {
+        panel1 = new SnakePanel();
         panel2 = new ImagePanel(SCREEN_WIDTH, SCREEN_HEIGHT);
-        button1 = new TransparentButton("Play", 0, 132, 0);
-        button2 = new TransparentButton("High Scores");
-        button3 = new TransparentButton("Settings");
-        button4 = new TransparentButton("Exit", 132, 0, 0);
+        startButton = new TransparentButton("Play", 0, 132, 0);
+        highScoreButton = new TransparentButton("High Scores");
+        settingsButton = new TransparentButton("Settings");
+        exitButton = new TransparentButton("Exit", 132, 0, 0);
     }
     public JPanel getPanel(){
         return panel1;
+    }
+
+    public JButton getStartButton() {
+        return startButton;
+    }
+
+    public JButton getHighScoreButton() {
+        return highScoreButton;
+    }
+
+    public JButton getSettingsButton() {
+        return settingsButton;
+    }
+
+    public JButton getExitButton() {
+        return exitButton;
     }
 }

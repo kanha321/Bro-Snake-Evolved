@@ -1,5 +1,6 @@
 package Game
 
+import panelManagement.PanelManager
 import utils.SnakePanel
 import java.awt.Graphics
 import java.awt.event.ActionEvent
@@ -25,14 +26,14 @@ class Panel : SnakePanel(), ActionListener {
     override fun actionPerformed(e: ActionEvent?) {
         if (running) {
             if (speedCheck == 22 - SPEED * 3 || speedCheck == 0) {
-                if (stopMovement) die() else move()
+                if (isDead) die() else move()
                 speedCheck = 0
             }
             speedCheck++
             checkFood()
             if (showPowerUp()) {
                 checkPowerUp()
-                if (!stopMovement)
+                if (!isDead)
                     powerUpTimeLeft -= DELAY
                 if (powerUpTimeLeft <= 0)
                     newPowerUp()
@@ -45,15 +46,15 @@ class Panel : SnakePanel(), ActionListener {
     inner class Controls : KeyAdapter() {
         override fun keyPressed(e: KeyEvent) {
             when (e.keyCode) {
-                KeyEvent.VK_W -> if (direction != 'd' && !stopMovement) direction = 'u'
-                KeyEvent.VK_S -> if (direction != 'u' && !stopMovement) direction = 'd'
-                KeyEvent.VK_A -> if (direction != 'r' && !stopMovement) direction = 'l'
-                KeyEvent.VK_D -> if (direction != 'l' && !stopMovement) direction = 'r'
+                KeyEvent.VK_W -> if (direction != 'd' && !isDead) direction = 'u'
+                KeyEvent.VK_S -> if (direction != 'u' && !isDead) direction = 'd'
+                KeyEvent.VK_A -> if (direction != 'r' && !isDead) direction = 'l'
+                KeyEvent.VK_D -> if (direction != 'l' && !isDead) direction = 'r'
 
-                KeyEvent.VK_UP -> if (direction != 'd' && !stopMovement) direction = 'u'
-                KeyEvent.VK_DOWN -> if (direction != 'u' && !stopMovement) direction = 'd'
-                KeyEvent.VK_LEFT -> if (direction != 'r' && !stopMovement) direction = 'l'
-                KeyEvent.VK_RIGHT -> if (direction != 'l' && !stopMovement) direction = 'r'
+                KeyEvent.VK_UP -> if (direction != 'd' && !isDead) direction = 'u'
+                KeyEvent.VK_DOWN -> if (direction != 'u' && !isDead) direction = 'd'
+                KeyEvent.VK_LEFT -> if (direction != 'r' && !isDead) direction = 'l'
+                KeyEvent.VK_RIGHT -> if (direction != 'l' && !isDead) direction = 'r'
 
                 KeyEvent.VK_SPACE -> {
                     if (!running) {
@@ -66,7 +67,7 @@ class Panel : SnakePanel(), ActionListener {
 
                 KeyEvent.VK_ESCAPE -> {
                     running = false
-//                    gameFrame.switchToHome()
+                    PanelManager.switchToPreviousPanel()
                 }
 
                 KeyEvent.VK_P -> {
@@ -85,6 +86,9 @@ class Panel : SnakePanel(), ActionListener {
                     timer!!.stop()
                     restartGame()
                     startGame(this@Panel)
+                }
+                KeyEvent.VK_F9 -> {
+                    isDead = true
                 }
             }
         }

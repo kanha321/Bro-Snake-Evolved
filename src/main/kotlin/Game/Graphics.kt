@@ -18,12 +18,12 @@ fun draw(g: Graphics) {
         }
         for (i in 0..<bodyParts) {
             if (i == 0) {
-                if (stopMovement && x[i] == collisionX && y[i] == collisionY)
+                if (isDead && x[i] == collisionX && y[i] == collisionY)
                     g.color = Color.red
                 else
                     g.color = Color.green
             } else {
-                if (stopMovement && x[i] == collisionX && y[i] == collisionY)
+                if (isDead && x[i] == collisionX && y[i] == collisionY)
                     g.color = Color.red
                 else
                     g.color = Color(45, 180, 0)

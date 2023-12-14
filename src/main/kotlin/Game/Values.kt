@@ -50,7 +50,7 @@ var appleAfterPowerUp = 0
 // flags
 var running = false
 var gameOver = false
-var stopMovement = false
+var isDead = false
 
 // some objects
 var timer: Timer? = null

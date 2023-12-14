@@ -23,9 +23,3 @@ fun createBlackImage(width: Int, height: Int): BufferedImage {
     graphics.dispose()
     return image
 }
-
-fun switchPanel(container: JPanel, panel: JPanel) {
-    val cl = container.layout as CardLayout
-    container.add(panel)
-    cl.show(container, panel.name)
-}

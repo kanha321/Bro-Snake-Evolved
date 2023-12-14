@@ -7,7 +7,8 @@
     added SnakePanel class
 
 [08:28 PM 13/Dec/2023] v2.0.0 beta 1
-    same as v2.0.0 preparation 2
+    back to v2.0.0 preparation 2
+    preparation 3 dumped
     fixed minor bugs
     incomplete HomeScreen for now
     no issues in the game
@@ -26,3 +27,9 @@
     now forms are Panels instead of JFrame
     next step is to add Panel switching
     game part is not touched it should work (I guess)
+
+[05:37 PM 14/Dec/2023] v2.0.0 beta 1.1.0    ---    (☺☻ Panel Manager ☻☺)
+    added PanelManager which creates a stack of panels to easily switch between them
+    added PanelHandler which handles the basic operations of panel (only because panels are written in java)
+    everything implemented working perfectly for now (I guess)
+    next step is to add HighScore feature and then settings part

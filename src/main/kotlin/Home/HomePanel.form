@@ -5,7 +5,9 @@
     <constraints>
       <xy x="20" y="20" width="500" height="403"/>
     </constraints>
-    <properties/>
+    <properties>
+      <preferredSize width="800" height="600"/>
+    </properties>
     <border type="none"/>
     <children>
       <grid id="3352e" binding="panel2" custom-create="true" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -16,10 +18,10 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4f26b" class="javax.swing.JButton" binding="button1" custom-create="true" default-binding="true">
+          <component id="4f26b" class="javax.swing.JButton" binding="startButton" custom-create="true" default-binding="true">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
-                <preferred-size width="250" height="65"/>
+                <preferred-size width="250" height="60"/>
               </grid>
             </constraints>
             <properties>
@@ -34,10 +36,10 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
-          <component id="f8b0e" class="javax.swing.JButton" binding="button2" custom-create="true" default-binding="true">
+          <component id="f8b0e" class="javax.swing.JButton" binding="highScoreButton" custom-create="true" default-binding="true">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
-                <preferred-size width="250" height="65"/>
+                <preferred-size width="250" height="60"/>
               </grid>
             </constraints>
             <properties>
@@ -47,10 +49,10 @@
               <text value="High Scores"/>
             </properties>
           </component>
-          <component id="b306a" class="javax.swing.JButton" binding="button3" custom-create="true" default-binding="true">
+          <component id="b306a" class="javax.swing.JButton" binding="settingsButton" custom-create="true" default-binding="true">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
-                <preferred-size width="250" height="65"/>
+                <preferred-size width="250" height="60"/>
               </grid>
             </constraints>
             <properties>
@@ -60,10 +62,10 @@
               <text value="Settings"/>
             </properties>
           </component>
-          <component id="d90f1" class="javax.swing.JButton" binding="button4" custom-create="true" default-binding="true">
+          <component id="80aa1" class="javax.swing.JButton" binding="exitButton" custom-create="true">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="250" height="65"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <preferred-size width="250" height="60"/>
               </grid>
             </constraints>
             <properties>

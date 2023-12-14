@@ -17,7 +17,7 @@ fun restartGame() {
     bodyParts = INITIAL_BODY_PARTS
     scoreCount = 0
     appleAfterPowerUp = 0
-    stopMovement = false
+    isDead = false
     collisionX = -1
     collisionY = -1
     x[0] = 0
@@ -130,7 +130,7 @@ fun checkCollision() {
         if (x[0] == x[i] && y[0] == y[i]) {
             collisionX = x[i]
             collisionY = y[i]
-            stopMovement = true
+            isDead = true
         }
         if (!running) timer!!.stop()
     }
