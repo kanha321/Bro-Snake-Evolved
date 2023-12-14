@@ -1,6 +1,5 @@
 package Game
 
-import utils.SnakeFrame
 import utils.SnakePanel
 import java.awt.Graphics
 import java.awt.event.ActionEvent
@@ -8,7 +7,7 @@ import java.awt.event.ActionListener
 import java.awt.event.KeyAdapter
 import java.awt.event.KeyEvent
 
-class Panel(private val gameFrame: SnakeFrame) : SnakePanel(), ActionListener {
+class Panel : SnakePanel(), ActionListener {
 
     init {
         forceInit()

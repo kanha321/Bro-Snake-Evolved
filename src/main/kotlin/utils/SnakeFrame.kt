@@ -1,41 +1,16 @@
 package utils
 import Home.HomePanel
-import Home.Panel
 import java.awt.CardLayout
-import java.awt.event.ActionListener
 import javax.swing.JFrame
 import javax.swing.JPanel
 
 
 class SnakeFrame : JFrame() {
-    var cardLayout: CardLayout? = null
-    var cardsContainer: JPanel? = null
-    var homePanel: HomePanel? = null
-    var myPanel: Panel? = null
-
-    fun MainFrame() {
-
-    }
-
-
     init {
-        cardLayout = CardLayout()
-        cardsContainer = JPanel(cardLayout)
-        homePanel = HomePanel()
-        myPanel = Panel()
+        val container = JPanel(CardLayout()) // Create the container with CardLayout
+        this.contentPane = container // Set the container as the content pane
+        container.add(HomePanel().panel) // Add the HomePanel to the container
 
-        cardsContainer!!.add(homePanel, "Home")
-        cardsContainer!!.add(myPanel, "MyPanel")
-
-        homePanel!!.button1!!.addActionListener(ActionListener {
-            cardLayout!!.show(cardsContainer, "MyPanel")
-        })
-
-        // Add a button listener in Home panel to switch to MyPanel
-        this.add(cardsContainer)
-
-        val homePanel = HomePanel()
-        this.add(homePanel)
         this.title = "SnakeGame (powered by Kotlin)"
         this.pack()
         this.isResizable = false

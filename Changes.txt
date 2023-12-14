@@ -20,3 +20,9 @@
 
 [12:16 AM 14/Dec/2023] v2.0.0 beta 1.0.2
     so lost, I'm faded ╥﹏╥
+
+[02:25 PM 14/Dec/2023] v2.0.0 beta 1.0.3
+    added Forms correctly (I think)
+    now forms are Panels instead of JFrame
+    next step is to add Panel switching
+    game part is not touched it should work (I guess)
