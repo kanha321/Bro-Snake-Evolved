@@ -13,9 +13,9 @@ class SnakeFrame : JFrame() {
     private var homePanel: HomePanel = createHomePanel(gamePanel)
 
     init {
-
         PanelManager.addPanel(homePanel.panel, "HomePanel")
         PanelManager.addPanel(gamePanel, "GamePanel")
+
         PanelManager.switchPanel(homePanel.panel)
 
         this.contentPane = PanelManager.getCardPanel()

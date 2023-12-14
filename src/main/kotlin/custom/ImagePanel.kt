@@ -1,11 +1,12 @@
 package custom
 
+import utils.SnakePanel
 import utils.getImage
 import java.awt.Graphics
 import java.awt.Image
 import javax.swing.JPanel
 
-open class ImagePanel(width: Int, height: Int) : JPanel() {
+open class ImagePanel(width: Int, height: Int) : SnakePanel() {
     private val pImage = getImage("/HomeScreen/portrait_4k.jpeg", this::class.java)
     private val lImage = getImage("/HomeScreen/landscape_4k.jpeg", this::class.java)
     private val sImage = getImage("/HomeScreen/square_4k.jpeg", this::class.java)
@@ -16,7 +17,11 @@ open class ImagePanel(width: Int, height: Int) : JPanel() {
         else sImage
 
     init {
-        image = image.getScaledInstance(-1, height, Image.SCALE_SMOOTH)
+        if (width > height) {
+            image = image.getScaledInstance(-1, height, Image.SCALE_SMOOTH)
+        } else if (width < height) {
+            image = image.getScaledInstance(width, -1, Image.SCALE_SMOOTH)
+        }
     }
     override fun paintComponent(g: Graphics) {
         super.paintComponent(g)

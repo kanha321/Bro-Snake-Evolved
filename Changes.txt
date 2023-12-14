@@ -33,3 +33,6 @@
     added PanelHandler which handles the basic operations of panel (only because panels are written in java)
     everything implemented working perfectly for now (I guess)
     next step is to add HighScore feature and then settings part
+
+[07:10 PM 14/Dec/2023] v2.0.0 beta 1.1.1
+    fixed backgroundImage scaling issue in portrait mode
