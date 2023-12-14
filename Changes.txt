@@ -36,3 +36,14 @@
 
 [07:10 PM 14/Dec/2023] v2.0.0 beta 1.1.1
     fixed backgroundImage scaling issue in portrait mode
+
+----------------------------------------------------------------------------------------------------------------
+
+    [08:44 PM 14/Dec/2023] GameOver Form created (incomplete)
+    [01:51 AM 15/Dec/2023] Gradle added to project
+
+------------------ Committed and pushed [02:06 AM 15/Dec/2023] v2.0.0 beta 1.1.2 -----------------
+
+    [02:50 AM 15/Dec/2023] removed Gradle (fixed the blunder)
+
+------------------ Committed and pushed [03:02 AM 15/Dec/2023] v2.0.0 beta 1.1.2 (hotfix)-----------------

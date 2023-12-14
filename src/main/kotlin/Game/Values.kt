@@ -58,7 +58,7 @@ var random: Random = Random()
 
 // strings
 var stRestartPrompt = "Press SPACE to play again"
-var stPausePrompt = "Press SPACE to resume"
+var stPausePrompt = "Press P to resume"
 var stPaused = "Paused"
 var stGameOver = "Game Over!!"
 var stWatermark = "!Bro-Snake-Evolved!"

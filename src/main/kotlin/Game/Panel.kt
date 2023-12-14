@@ -1,5 +1,6 @@
 package Game
 
+import GameOver.GameOverPanel
 import panelManagement.PanelManager
 import utils.SnakePanel
 import java.awt.Graphics
@@ -8,10 +9,11 @@ import java.awt.event.ActionListener
 import java.awt.event.KeyAdapter
 import java.awt.event.KeyEvent
 
-class Panel : SnakePanel(), ActionListener {
+class Panel(private var gameOverPanel: GameOverPanel) : SnakePanel(), ActionListener {
 
     init {
         forceInit()
+//        running = true
         val keyAd = Controls()
         isFocusable = true
         addKeyListener(keyAd)
@@ -26,7 +28,7 @@ class Panel : SnakePanel(), ActionListener {
     override fun actionPerformed(e: ActionEvent?) {
         if (running) {
             if (speedCheck == 22 - SPEED * 3 || speedCheck == 0) {
-                if (isDead) die() else move()
+                if (isDead) die(gameOverPanel) else move()
                 speedCheck = 0
             }
             speedCheck++
@@ -39,8 +41,8 @@ class Panel : SnakePanel(), ActionListener {
                     newPowerUp()
             }
             checkCollision()
+            repaint()
         }
-        repaint()
     }
 
     inner class Controls : KeyAdapter() {

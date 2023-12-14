@@ -1,9 +1,10 @@
 package panelManagement
 
 import Game.restartGame
-import Game.startGame
 import Game.timer
+import GameOver.GameOverPanel
 import Home.HomePanel
+import java.awt.event.KeyEvent
 import kotlin.system.exitProcess
 
 fun createHomePanel(gamePanel: Game.Panel): HomePanel {
@@ -19,5 +20,26 @@ fun createHomePanel(gamePanel: Game.Panel): HomePanel {
     }
     return homePanel
 }
-fun createGamePanel() = Game.Panel()
+
+fun createGamePanel(gameOverPanel: GameOverPanel) = Game.Panel(gameOverPanel)
+
+fun createGameOverPanel(): GameOverPanel {
+    val gameOverPanel = GameOverPanel()
+
+    gameOverPanel.panel.addKeyListener(
+        object : java.awt.event.KeyAdapter() {
+            override fun keyPressed(e: KeyEvent) {
+                when (e.keyCode) {
+                    KeyEvent.VK_SPACE -> {
+                        PanelManager.switchToPreviousPanel()
+                        PanelManager.getCurrentPanel()!!.requestFocusInWindow()
+                        restartGame()
+                        timer!!.start()
+                    }
+                }
+            }
+        }
+    )
+    return gameOverPanel
+}
 

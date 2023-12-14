@@ -1,5 +1,7 @@
 package Game
 
+import GameOver.GameOverPanel
+import panelManagement.PanelManager
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH
 import java.awt.event.ActionListener
@@ -22,7 +24,7 @@ fun restartGame() {
     collisionY = -1
     x[0] = 0
     y[0] = 0
-    for (i in 1..<bodyParts) {
+    for (i in 1 until bodyParts) {
         x[i] = -1
         y[i] = -1
     }
@@ -150,12 +152,14 @@ fun move() {
     tailDirection = getDirection(bodyParts - 1)
 }
 
-fun die() {
+fun die(gameOverPanel: GameOverPanel) {
     bodyParts--
     if (bodyParts == 0) {
         gameOver = true
         running = false
         timer!!.stop()
+        PanelManager.switchPanel(gameOverPanel.panel)
+        gameOverPanel.panel.requestFocusInWindow()
     }
 }
 

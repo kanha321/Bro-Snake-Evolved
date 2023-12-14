@@ -7,31 +7,29 @@ import java.awt.Font
 import java.awt.Graphics
 
 fun draw(g: Graphics) {
-    if (running) {
-        if (showPowerUp()) {
-            powerUpTimer(g)
+    if (showPowerUp()) {
+        powerUpTimer(g)
+    }
+    g.drawImage(foodImgs[foodIndex], foodX, foodY, UNIT_SIZE, UNIT_SIZE, null)
+    if (showPowerUp()) {
+        g.drawImage(powerUpImgs[powerUpIndex], powerUpX, powerUpY, POWER_UP_UNIT_SIZE, POWER_UP_UNIT_SIZE, null)
+        powerUpTimer(g)
+    }
+    for (i in 0 until bodyParts) {
+        if (i == 0) {
+            if (isDead && x[i] == collisionX && y[i] == collisionY)
+                g.color = Color.red
+            else
+                g.color = Color.green
+        } else {
+            if (isDead && x[i] == collisionX && y[i] == collisionY)
+                g.color = Color.red
+            else
+                g.color = Color(45, 180, 0)
         }
-        g.drawImage(foodImgs[foodIndex], foodX, foodY, UNIT_SIZE, UNIT_SIZE, null)
-        if (showPowerUp()) {
-            g.drawImage(powerUpImgs[powerUpIndex], powerUpX, powerUpY, POWER_UP_UNIT_SIZE, POWER_UP_UNIT_SIZE, null)
-            powerUpTimer(g)
-        }
-        for (i in 0..<bodyParts) {
-            if (i == 0) {
-                if (isDead && x[i] == collisionX && y[i] == collisionY)
-                    g.color = Color.red
-                else
-                    g.color = Color.green
-            } else {
-                if (isDead && x[i] == collisionX && y[i] == collisionY)
-                    g.color = Color.red
-                else
-                    g.color = Color(45, 180, 0)
-            }
-            g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE)
-        }
-        waterMark(g)
-    } else gameOver(g)
+        g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE)
+    }
+    waterMark(g)
     displayScore(g)
 }
 

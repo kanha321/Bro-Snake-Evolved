@@ -1,6 +1,8 @@
 package utils
+import GameOver.GameOverPanel
 import Home.HomePanel
 import panelManagement.PanelManager
+import panelManagement.createGameOverPanel
 import panelManagement.createGamePanel
 import panelManagement.createHomePanel
 import java.awt.CardLayout
@@ -9,12 +11,16 @@ import javax.swing.JPanel
 
 
 class SnakeFrame : JFrame() {
-    private var gamePanel = createGamePanel()
-    private var homePanel: HomePanel = createHomePanel(gamePanel)
+    private var homePanel: HomePanel
+    private var gamePanel: Game.Panel
+    private var gameOverPanel: GameOverPanel = createGameOverPanel()
 
     init {
+        gamePanel = createGamePanel(gameOverPanel)
+        homePanel = createHomePanel(gamePanel)
         PanelManager.addPanel(homePanel.panel, "HomePanel")
         PanelManager.addPanel(gamePanel, "GamePanel")
+        PanelManager.addPanel(gameOverPanel.panel, "GameOverPanel")
 
         PanelManager.switchPanel(homePanel.panel)
 

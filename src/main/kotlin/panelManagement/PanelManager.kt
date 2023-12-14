@@ -13,14 +13,21 @@ object PanelManager {
     fun getCardPanel(): SnakePanel {
         return cardPanel
     }
+
+    fun getCurrentPanel(): JPanel? {
+        return if (!panelStack.empty()) panelStack.peek() else null
+    }
+
     fun addPanel(panel: JPanel, name: String) {
         panel.name = name
         cardPanel.add(panel, name)
     }
+
     fun switchPanel(panel: JPanel) {
         cardLayout.show(cardPanel, panel.name)
         panelStack.push(panel)
     }
+
     fun switchToPreviousPanel() {
         if (!panelStack.empty()) {
             panelStack.pop()
