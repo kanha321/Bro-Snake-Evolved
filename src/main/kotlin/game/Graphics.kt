@@ -1,4 +1,4 @@
-package Game
+package game
 
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH
@@ -53,11 +53,22 @@ fun drawBorder(g: Graphics) {
 }
 
 fun displayScore(g: Graphics) {
+    val xpos = if (gameOver) 4 else 2
     g.color = Color(200, 200, 200, 180)
     g.font = Font("Monotype Corsiva", Font.PLAIN, 40)
     g.drawString(
         "score: $scoreCount",
-        (SCREEN_WIDTH - g.fontMetrics.stringWidth("score: $scoreCount")) / 2,
+        (SCREEN_WIDTH - g.fontMetrics.stringWidth("score: $scoreCount")) / xpos,
+        SCREEN_HEIGHT - 15
+    )
+}
+
+fun displayHighScore(g: Graphics) {
+    g.color = Color(200, 200, 200, 180)
+    g.font = Font("Monotype Corsiva", Font.PLAIN, 40)
+    g.drawString(
+        "high score: 69",
+        (SCREEN_WIDTH - g.fontMetrics.stringWidth("high score: 69")) * 3 / 4,
         SCREEN_HEIGHT - 15
     )
 }

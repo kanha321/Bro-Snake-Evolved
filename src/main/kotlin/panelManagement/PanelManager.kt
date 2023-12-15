@@ -5,6 +5,7 @@ import java.awt.CardLayout
 import java.awt.Window
 import java.util.*
 import javax.swing.JPanel
+import kotlin.system.exitProcess
 
 object PanelManager {
     private var cardLayout: CardLayout = CardLayout()
@@ -31,12 +32,27 @@ object PanelManager {
             panel.requestFocusInWindow()
     }
 
-    fun switchToPreviousPanel() {
-        if (!panelStack.empty()) {
-            panelStack.pop()
-            if (!panelStack.empty()) {
-                cardLayout.show(cardPanel, panelStack.peek().name)
+    fun goToPanelAndClearStack(targetPanel: JPanel) {
+        while (!panelStack.empty()) panelStack.pop()
+        panelStack.push(targetPanel)
+        switchPanel(targetPanel)
+    }
+
+    fun switchToPreviousPanel(targetPanel: JPanel? = null) {  // BUG: giving argument works slower takes around 600-700ms to switch
+        if (targetPanel != null) {
+            while (!panelStack.empty() && panelStack.peek() != targetPanel) {
+                panelStack.pop()
             }
+        } else {
+            if (!panelStack.empty()) {
+                panelStack.pop()
+            }
+        }
+        if (!panelStack.empty()) {
+            cardLayout.show(cardPanel, panelStack.peek().name)
+            panelStack.peek().requestFocusInWindow()
+        } else {
+            exitProcess(0)
         }
     }
 }

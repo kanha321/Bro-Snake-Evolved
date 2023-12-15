@@ -1,6 +1,6 @@
-package Game
+package game
 
-import GameOver.GameOverPanel
+import gameOver.GameOverPanel
 import panelManagement.PanelManager
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH

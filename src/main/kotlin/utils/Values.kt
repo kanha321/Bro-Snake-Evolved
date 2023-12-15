@@ -1,6 +1,6 @@
 package utils
 
-import Game.Panel
+import game.Panel
 import java.awt.Color
 import java.awt.Image
 import java.awt.image.BufferedImage

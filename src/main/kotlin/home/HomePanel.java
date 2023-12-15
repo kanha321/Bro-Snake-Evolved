@@ -1,11 +1,10 @@
-package Home;
+package home;
 
 import custom.ImagePanel;
 import custom.TransparentButton;
 import utils.SnakePanel;
 
 import javax.swing.*;
-import java.awt.*;
 
 import static utils.ValuesKt.*;
 

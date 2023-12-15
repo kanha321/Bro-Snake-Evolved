@@ -1,7 +1,6 @@
-package Game
+package game
 
-import GameOver.GameOverPanel
-import panelManagement.PanelManager
+import gameOver.GameOverPanel
 import utils.SnakePanel
 import java.awt.Graphics
 import java.awt.event.ActionEvent
@@ -71,7 +70,6 @@ class Panel(private var gameOverPanel: GameOverPanel) : SnakePanel(), ActionList
 
                 KeyEvent.VK_ESCAPE -> {
                     running = false
-                    PanelManager.switchToPreviousPanel()
                 }
 
                 KeyEvent.VK_P -> {

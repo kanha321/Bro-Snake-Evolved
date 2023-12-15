@@ -1,4 +1,4 @@
-package Game
+package game
 
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH

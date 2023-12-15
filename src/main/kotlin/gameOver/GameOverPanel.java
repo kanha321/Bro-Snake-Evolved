@@ -1,4 +1,4 @@
-package GameOver;
+package gameOver;
 
 import custom.GameOverBackgroundPanel;
 
@@ -13,7 +13,7 @@ public class GameOverPanel {
         panel1 = new GameOverBackgroundPanel();
     }
 
-    public JPanel getPanel(){
+    public JPanel getPanel() {
         return panel1;
     }
 }

@@ -1,13 +1,14 @@
 package panelManagement
 
-import Game.restartGame
-import Game.timer
-import GameOver.GameOverPanel
-import Home.HomePanel
+import game.restartGame
+import game.timer
+import gameOver.GameOverPanel
+import home.HomePanel
+import panelManagement.PanelManager.switchToPreviousPanel
 import java.awt.event.KeyEvent
 import kotlin.system.exitProcess
 
-fun createHomePanel(gamePanel: Game.Panel): HomePanel {
+fun createHomePanel(gamePanel: game.Panel): HomePanel {
     val homePanel = HomePanel()
     homePanel.startButton.addActionListener {
         PanelManager.switchPanel(gamePanel)
@@ -17,10 +18,25 @@ fun createHomePanel(gamePanel: Game.Panel): HomePanel {
     homePanel.exitButton.addActionListener {
         exitProcess(0)
     }
+
+    homePanel.panel.addKeyListener(
+        object : java.awt.event.KeyAdapter() {
+            override fun keyPressed(e: KeyEvent) {
+                when (e.keyCode) {
+                    KeyEvent.VK_SPACE -> {
+                        PanelManager.switchPanel(gamePanel)
+                        restartGame()
+                        timer!!.start()
+                    }
+                }
+            }
+        }
+    )
+
     return homePanel
 }
 
-fun createGamePanel(gameOverPanel: GameOverPanel) = Game.Panel(gameOverPanel)
+fun createGamePanel(gameOverPanel: GameOverPanel) = game.Panel(gameOverPanel)
 
 fun createGameOverPanel(): GameOverPanel {
     val gameOverPanel = GameOverPanel()
@@ -30,10 +46,12 @@ fun createGameOverPanel(): GameOverPanel {
             override fun keyPressed(e: KeyEvent) {
                 when (e.keyCode) {
                     KeyEvent.VK_SPACE -> {
-                        PanelManager.switchToPreviousPanel()
-                        PanelManager.getCurrentPanel()!!.requestFocusInWindow()
+                        switchToPreviousPanel()
                         restartGame()
                         timer!!.start()
+                    }
+                    KeyEvent.VK_ESCAPE -> {
+                        switchToPreviousPanel()
                     }
                 }
             }
