@@ -22,9 +22,9 @@ fun restartGame() {
     isDead = false
     collisionX = -1
     collisionY = -1
-    x[0] = 0
-    y[0] = 0
-    for (i in 1 until bodyParts) {
+    x[0] = UNIT_SIZE
+    y[0] = UNIT_SIZE
+    for (i in 1..<bodyParts) {
         x[i] = -1
         y[i] = -1
     }
@@ -37,8 +37,8 @@ fun restartGame() {
 
 fun newFood() {
     foodIndex = getRandom(foodImgs.size)
-    foodX = getRandom(SCREEN_WIDTH / UNIT_SIZE) * UNIT_SIZE
-    foodY = getRandom(SCREEN_HEIGHT / UNIT_SIZE) * UNIT_SIZE
+    foodX = (getRandom((SCREEN_WIDTH / UNIT_SIZE) - 2) * UNIT_SIZE) + UNIT_SIZE
+    foodY = (getRandom((SCREEN_HEIGHT / UNIT_SIZE) - 3) * UNIT_SIZE) + UNIT_SIZE
 }
 
 fun checkFood() {
@@ -62,10 +62,21 @@ fun showPowerUp(): Boolean {
 
 fun newPowerUp() {
     powerUpIndex = getRandom(powerUpImgs.size)
-    powerUpX = getRandom(SCREEN_WIDTH / POWER_UP_UNIT_SIZE) * POWER_UP_UNIT_SIZE
-    powerUpY = getRandom(SCREEN_HEIGHT / POWER_UP_UNIT_SIZE) * POWER_UP_UNIT_SIZE
+    do {
+        powerUpX = getRandom((SCREEN_WIDTH - ((POWER_UP_SIZE - 1) + 2) * UNIT_SIZE) / UNIT_SIZE) * UNIT_SIZE + UNIT_SIZE
+        powerUpY = getRandom((SCREEN_HEIGHT - ((POWER_UP_SIZE - 1) + 3) * UNIT_SIZE) / UNIT_SIZE) * UNIT_SIZE + UNIT_SIZE
+    } while (isCollidingWithSnake())
     powerUpTimeLeft = POWER_UP_TIMER
-    appleAfterPowerUp = 0
+//    appleAfterPowerUp = 0
+}
+
+fun isCollidingWithSnake(): Boolean {
+    for (i in 0..<bodyParts) {
+        if (x[i] == powerUpX && y[i] == powerUpY) {
+            return true
+        }
+    }
+    return false
 }
 
 fun checkPowerUp() {
@@ -73,12 +84,18 @@ fun checkPowerUp() {
     while (i < powerUpX + POWER_UP_SIZE * UNIT_SIZE) {
         var j = powerUpY
         while (j < powerUpY + POWER_UP_SIZE * UNIT_SIZE) {
+            // Check collision with snake's head
             if (x[0] == i && y[0] == j) {
                 scoreCount += powerUpTimeLeft / 100 * SPEED
                 applyPowerUp()
                 newPowerUp()
-                bodyParts++
                 appleAfterPowerUp = 0
+            }
+            // Check collision with the rest of the snake's body
+            for (k in 1..<bodyParts) {
+                if (i == x[k] && j == y[k]) {
+                    newPowerUp()
+                }
             }
             j += UNIT_SIZE
         }
@@ -116,17 +133,17 @@ fun applyPowerUp() {
 }
 
 fun checkCollision() {
-    if (x[0] > SCREEN_WIDTH - UNIT_SIZE) {
-        x[0] = 0
+    if (x[0] > SCREEN_WIDTH - UNIT_SIZE * 2) {
+        x[0] = UNIT_SIZE
     }
-    if (x[0] < 0) {
-        x[0] = SCREEN_WIDTH - UNIT_SIZE
+    if (x[0] < UNIT_SIZE) {
+        x[0] = SCREEN_WIDTH - UNIT_SIZE * 2
     }
-    if (y[0] > SCREEN_HEIGHT - UNIT_SIZE) {
-        y[0] = 0
+    if (y[0] > SCREEN_HEIGHT - UNIT_SIZE * 3) {
+        y[0] = UNIT_SIZE
     }
-    if (y[0] < 0) {
-        y[0] = SCREEN_HEIGHT - UNIT_SIZE
+    if (y[0] < UNIT_SIZE) {
+        y[0] = SCREEN_HEIGHT - UNIT_SIZE * 3
     }
     for (i in bodyParts downTo 1) {
         if (x[0] == x[i] && y[0] == y[i]) {
@@ -159,7 +176,6 @@ fun die(gameOverPanel: GameOverPanel) {
         running = false
         timer!!.stop()
         PanelManager.switchPanel(gameOverPanel.panel)
-        gameOverPanel.panel.requestFocusInWindow()
     }
 }
 

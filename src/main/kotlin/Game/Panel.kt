@@ -37,8 +37,10 @@ class Panel(private var gameOverPanel: GameOverPanel) : SnakePanel(), ActionList
                 checkPowerUp()
                 if (!isDead)
                     powerUpTimeLeft -= DELAY
-                if (powerUpTimeLeft <= 0)
+                if (powerUpTimeLeft <= 0){
+                    appleAfterPowerUp = 0
                     newPowerUp()
+                }
             }
             checkCollision()
             repaint()

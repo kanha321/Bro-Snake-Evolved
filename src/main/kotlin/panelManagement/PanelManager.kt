@@ -2,6 +2,7 @@ package panelManagement
 
 import utils.SnakePanel
 import java.awt.CardLayout
+import java.awt.Window
 import java.util.*
 import javax.swing.JPanel
 
@@ -23,9 +24,11 @@ object PanelManager {
         cardPanel.add(panel, name)
     }
 
-    fun switchPanel(panel: JPanel) {
+    fun switchPanel(panel: JPanel, requestFocusInWindow: Boolean = true) {
         cardLayout.show(cardPanel, panel.name)
         panelStack.push(panel)
+        if (requestFocusInWindow)
+            panel.requestFocusInWindow()
     }
 
     fun switchToPreviousPanel() {

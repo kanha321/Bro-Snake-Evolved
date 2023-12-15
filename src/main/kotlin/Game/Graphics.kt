@@ -7,6 +7,9 @@ import java.awt.Font
 import java.awt.Graphics
 
 fun draw(g: Graphics) {
+
+    drawBorder(g)
+
     if (showPowerUp()) {
         powerUpTimer(g)
     }
@@ -15,7 +18,7 @@ fun draw(g: Graphics) {
         g.drawImage(powerUpImgs[powerUpIndex], powerUpX, powerUpY, POWER_UP_UNIT_SIZE, POWER_UP_UNIT_SIZE, null)
         powerUpTimer(g)
     }
-    for (i in 0 until bodyParts) {
+    for (i in 0..<bodyParts) {
         if (i == 0) {
             if (isDead && x[i] == collisionX && y[i] == collisionY)
                 g.color = Color.red
@@ -29,8 +32,24 @@ fun draw(g: Graphics) {
         }
         g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE)
     }
+    fix00(g)
     waterMark(g)
+//    devVal1(g)
     displayScore(g)
+}
+fun fix00(g: Graphics){
+    g.color = Color.black
+    g.fillRect(0, 0, UNIT_SIZE, UNIT_SIZE)  // the dirty way to hide the glitch where snake's body appears at (0, 0)
+    g.color = Color.decode("#FFF800")
+    g.fillRect(UNIT_SIZE - 2, UNIT_SIZE - 2, SCREEN_WIDTH - 2 * UNIT_SIZE + 3, 2)
+}
+
+fun drawBorder(g: Graphics) {
+    g.color = Color.decode("#FFF800")
+    g.fillRect(UNIT_SIZE - 2, UNIT_SIZE - 2, 3, SCREEN_HEIGHT - UNIT_SIZE - 2 * UNIT_SIZE)
+    g.fillRect(SCREEN_WIDTH - UNIT_SIZE - 1, UNIT_SIZE - 2, 3, SCREEN_HEIGHT - UNIT_SIZE - 2 * UNIT_SIZE)
+    g.fillRect(UNIT_SIZE - 2, UNIT_SIZE - 2, SCREEN_WIDTH - 2 * UNIT_SIZE + 3, 3)
+    g.fillRect(UNIT_SIZE - 2, SCREEN_HEIGHT - UNIT_SIZE * 2 - 2, SCREEN_WIDTH - 2 * UNIT_SIZE + 4, 3)
 }
 
 fun displayScore(g: Graphics) {
@@ -39,7 +58,7 @@ fun displayScore(g: Graphics) {
     g.drawString(
         "score: $scoreCount",
         (SCREEN_WIDTH - g.fontMetrics.stringWidth("score: $scoreCount")) / 2,
-        SCREEN_HEIGHT - 30
+        SCREEN_HEIGHT - 15
     )
 }
 
@@ -72,11 +91,20 @@ fun restartPrompt(g: Graphics) {
     )
 }
 
+fun devVal1(g: Graphics) {
+    g.color = Color.green
+    g.font = Font("Times New Roman", Font.PLAIN, 30)
+    g.drawString(
+        "applesAfterPowerUp: $appleAfterPowerUp",
+        (SCREEN_WIDTH - g.fontMetrics.stringWidth("applesAfterPowerUp: $appleAfterPowerUp")) / 2,
+        SCREEN_HEIGHT - 50
+    )
+}
+
 fun powerUpTimer(g: Graphics) {
-    var i = 0
-    while (i < powerUpTimeLeft * SCREEN_WIDTH / POWER_UP_TIMER) {
+
+    for (i in 0..<powerUpTimeLeft * SCREEN_WIDTH / POWER_UP_TIMER) {
         g.color = Color(255, 255, 0)
         g.fillRect(i - UNIT_SIZE, SCREEN_HEIGHT - 3, UNIT_SIZE, UNIT_SIZE)
-        i++
     }
 }

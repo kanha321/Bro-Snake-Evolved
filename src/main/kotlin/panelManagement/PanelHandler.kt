@@ -13,7 +13,6 @@ fun createHomePanel(gamePanel: Game.Panel): HomePanel {
         PanelManager.switchPanel(gamePanel)
         restartGame()
         timer!!.start()
-        gamePanel.requestFocusInWindow()
     }
     homePanel.exitButton.addActionListener {
         exitProcess(0)
