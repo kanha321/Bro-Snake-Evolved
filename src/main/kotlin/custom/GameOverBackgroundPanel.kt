@@ -9,8 +9,12 @@ class GameOverBackgroundPanel : SnakePanel() {
         super.paintComponent(g)
         gameOver(g)
         restartPrompt(g)
-        displayScore(g)
-        displayHighScore(g)
+        if (scoreCount > highScore) {
+            displayNewHighScore(g)
+        } else {
+            displayScore(g)
+            displayHighScore(g)
+        }
     }
 
 }

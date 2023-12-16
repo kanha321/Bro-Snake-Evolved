@@ -1,5 +1,7 @@
 package game
 
+import game.logic.showPowerUp
+import highScores.getHighScore
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH
 import java.awt.Color
@@ -57,8 +59,8 @@ fun displayScore(g: Graphics) {
     g.color = Color(200, 200, 200, 180)
     g.font = Font("Monotype Corsiva", Font.PLAIN, 40)
     g.drawString(
-        "score: $scoreCount",
-        (SCREEN_WIDTH - g.fontMetrics.stringWidth("score: $scoreCount")) / xpos,
+        "Score: $scoreCount",
+        (SCREEN_WIDTH - g.fontMetrics.stringWidth("Score: $scoreCount")) / xpos,
         SCREEN_HEIGHT - 15
     )
 }
@@ -67,16 +69,25 @@ fun displayHighScore(g: Graphics) {
     g.color = Color(200, 200, 200, 180)
     g.font = Font("Monotype Corsiva", Font.PLAIN, 40)
     g.drawString(
-        "high score: 69",
-        (SCREEN_WIDTH - g.fontMetrics.stringWidth("high score: 69")) * 3 / 4,
+        "High Score: $highScore",
+        (SCREEN_WIDTH - g.fontMetrics.stringWidth("High Score: $highScore")) * 3 / 4,
         SCREEN_HEIGHT - 15
+    )
+}
+fun displayNewHighScore(g: Graphics) {
+    g.color = Color(255, 163, 0, 180)
+    g.font = Font("Monotype Corsiva", Font.PLAIN, 45)
+    g.drawString(
+        "New High Score: ${getHighScore().highScore}",
+        (SCREEN_WIDTH - g.fontMetrics.stringWidth("New High Score: ${getHighScore().highScore}")) / 2,
+        SCREEN_HEIGHT - 25
     )
 }
 
 fun gameOver(g: Graphics) {
     gameOver = true
     g.color = Color.red
-    g.font = Font("Ink Free", Font.BOLD, 69)
+    g.font = Font("Ink Free", Font.BOLD, 84)
     g.drawString(stGameOver, (SCREEN_WIDTH - g.fontMetrics.stringWidth(stGameOver)) / 2, SCREEN_HEIGHT / 2)
     restartPrompt(g)
 }
@@ -102,12 +113,12 @@ fun restartPrompt(g: Graphics) {
     )
 }
 
-fun devVal1(g: Graphics) {
+fun devVal1(g: Graphics, val1: Int) {
     g.color = Color.green
     g.font = Font("Times New Roman", Font.PLAIN, 30)
     g.drawString(
-        "applesAfterPowerUp: $appleAfterPowerUp",
-        (SCREEN_WIDTH - g.fontMetrics.stringWidth("applesAfterPowerUp: $appleAfterPowerUp")) / 2,
+        val1.toString(),
+        (SCREEN_WIDTH - g.fontMetrics.stringWidth(val1.toString())) / 2,
         SCREEN_HEIGHT - 50
     )
 }

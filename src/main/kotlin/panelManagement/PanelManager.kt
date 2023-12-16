@@ -2,7 +2,6 @@ package panelManagement
 
 import utils.SnakePanel
 import java.awt.CardLayout
-import java.awt.Window
 import java.util.*
 import javax.swing.JPanel
 import kotlin.system.exitProcess

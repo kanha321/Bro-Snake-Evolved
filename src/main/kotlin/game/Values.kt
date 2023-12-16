@@ -1,5 +1,7 @@
 package game
 
+import highScores.getHighScore
+import highScores.loadHighScores
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH
 import utils.getImage
@@ -43,9 +45,14 @@ var foodIndex = -1
 var collisionX = -1
 var collisionY = -1
 
-// apple counts
+// score counts
 var scoreCount = 0
 var appleAfterPowerUp = 0
+
+// high score
+var highScore = getHighScore().highScore
+var highScoreTime = getHighScore().time
+var allScore = loadHighScores()
 
 // flags
 var running = false

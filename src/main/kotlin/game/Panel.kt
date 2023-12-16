@@ -1,5 +1,6 @@
 package game
 
+import game.logic.*
 import gameOver.GameOverPanel
 import utils.SnakePanel
 import java.awt.Graphics

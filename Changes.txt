@@ -59,4 +59,13 @@
     [02:40 AM 16/Dec/2023] added escape key functionality to every panel (by modifying SnakePanel)
 
 
-------------------- Committed and pushed [03:16 AM 16/Dec/2023] v2.0.0 beta 1.1.3 -------------------
+------------------- Committed and pushed [03:16 AM 16/Dec/2023] v2.0.0 beta 1.1.4 -------------------
+
+    [09:27 AM 16/Dec/2023] added json library
+    [09:49 AM 16/Dec/2023] added ability to save high score (displays at the game over panel)
+    [10:11 AM 16/Dec/2023] added Gson library and created highScore data class to save score with time
+    [11:20 AM 16/Dec/2023] separated basic logic and powerUp logic
+    [02:22 PM 16/Dec/2023] added score history along with high scores using json array
+
+---------------------------------------[High Scores]-----------------------------------------------
+------------------------ Committed [02:30 PM 16/Dec/2023] v2.0.0 beta 1.2.0 -----------------------

@@ -1,5 +1,3 @@
-import utils.SnakeFrame
-
 fun main() {
-    SnakeFrame()
+    utils.init()
 }
