@@ -2,6 +2,7 @@ package utils
 import gameOver.GameOverPanel
 import gameOver.createGameOverPanel
 import highScores.createScoresPanel
+import highScores.loadHighScores
 import home.HomePanel
 import home.createHomePanel
 import panelManagement.PanelManager
@@ -15,8 +16,9 @@ class SnakeFrame : JFrame() {
     private var scoresPanel: highScores.ScoresPanel
 
     init {
+        val highScores = loadHighScores()!!.sortedByDescending { it.highScore }.take(10)
         gamePanel = game.Panel(gameOverPanel)
-        scoresPanel = createScoresPanel()
+        scoresPanel = createScoresPanel(highScores)
         homePanel = createHomePanel(gamePanel, scoresPanel.parent)
         PanelManager.addPanel(homePanel.panel, "HomePanel")
         PanelManager.addPanel(gamePanel, "GamePanel")

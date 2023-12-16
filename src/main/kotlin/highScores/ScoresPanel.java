@@ -9,6 +9,8 @@ import static highScores.ValuesKt.getScoresTableModel;
 public class ScoresPanel {
     private JPanel parent;
     private JTable scoresTable;
+    private JButton button1;
+    private JButton button2;
 
     public ScoresPanel() {
 
@@ -26,6 +28,14 @@ public class ScoresPanel {
 
     public JTable getScoresTable() {
         return scoresTable;
+    }
+
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public JButton getButton2() {
+        return button2;
     }
 
 }

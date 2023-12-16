@@ -4,6 +4,7 @@ import game.*
 import gameOver.GameOverPanel
 import highScores.HighScoreData
 import highScores.getHighScore
+import highScores.loadHighScores
 import highScores.saveScore
 import panelManagement.PanelManager
 import utils.SCREEN_HEIGHT
@@ -102,6 +103,7 @@ fun die(gameOverPanel: GameOverPanel) {
     bodyParts--
     if (bodyParts == 0) {
         saveScore(HighScoreData(scoreCount, System.currentTimeMillis()))
+        highScores.refreshScores(sort = true)
         gameOver = true
         running = false
         timer!!.stop()

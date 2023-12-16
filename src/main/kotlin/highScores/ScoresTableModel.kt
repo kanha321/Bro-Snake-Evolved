@@ -38,4 +38,8 @@ class ScoresTableModel : AbstractTableModel() {
     fun get10highScores(): List<HighScoreData> {
         return scores.sortedByDescending { it.highScore }.take(10)
     }
+    fun clearScores() {
+        scores.clear()
+        fireTableDataChanged()
+    }
 }

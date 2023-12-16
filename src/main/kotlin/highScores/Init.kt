@@ -1,13 +1,21 @@
 package highScores
 
-import game.allScore
+import panelManagement.PanelManager.switchToPreviousPanel
 
-fun createScoresPanel(): ScoresPanel {
+
+fun createScoresPanel(highScores: List<HighScoreData>): ScoresPanel {
     val scoresPanel = ScoresPanel()
-    if (allScore != null) {
-        for (highScore in loadSortedHighScores()!!) {
+    if (highScores.isNotEmpty()) {
+        for (highScore in highScores) {
             scoresTableModel.addScore(highScore)
         }
     }
+    scoresPanel.button1.addActionListener {
+        refreshScores(sort = true)
+    }
+    scoresPanel.button2.addActionListener {
+        refreshScores()
+    }
     return scoresPanel
 }
+

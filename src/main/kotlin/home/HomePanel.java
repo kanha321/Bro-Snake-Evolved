@@ -26,6 +26,7 @@ public class HomePanel {
         startButton = new TransparentButton("Play", 0, 132, 0);
         highScoreButton = new TransparentButton("High Scores");
         settingsButton = new TransparentButton("Settings");
+        settingsButton.setVisible(false);
         exitButton = new TransparentButton("Exit", 132, 0, 0);
     }
     public JPanel getPanel(){

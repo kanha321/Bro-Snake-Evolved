@@ -69,3 +69,7 @@
 
 ---------------------------------------[High Scores]-----------------------------------------------
 ------------------- Committed and pushed [02:31 PM 16/Dec/2023] v2.0.0 beta 1.2.0 -----------------
+
+    [02:08 AM 17/Dec/2023] fixed new high score appearing at the bottom (many more changes needed to highScore panel)
+
+------------------------ Committed [02:15 AM 17/Dec/2023] v2.0.0 beta 1.2.1 -----------------------
