@@ -68,4 +68,4 @@
     [02:22 PM 16/Dec/2023] added score history along with high scores using json array
 
 ---------------------------------------[High Scores]-----------------------------------------------
------------------------- Committed [02:30 PM 16/Dec/2023] v2.0.0 beta 1.2.0 -----------------------
+------------------- Committed and pushed [02:31 PM 16/Dec/2023] v2.0.0 beta 1.2.0 -----------------
