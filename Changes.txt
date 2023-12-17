@@ -73,3 +73,15 @@
     [02:08 AM 17/Dec/2023] fixed new high score appearing at the bottom (many more changes needed to highScore panel)
 
 ------------------------ Committed [02:15 AM 17/Dec/2023] v2.0.0 beta 1.2.1 -----------------------
+
+    [04:13 PM 17/Dec/2023] added mouse click action on table header to sort scores
+    [06:24 PM 17/Dec/2023] high scores table finished (I Guess) (might change the colors in future)
+                                                                                   [very close to stable version 2.0.0]
+                                                                                   [needs to clean up powerup stuffs]
+------------------------ Committed [06:32 PM 17/Dec/2023] v2.0.0 beta 1.2.2 -----------------------
+
+    [01:12 AM 18/Dec/2023] fixed game unable to launch when highScore file is empty or not exists
+    [01:21 AM 18/Dec/2023] replaced all powerUp graphics with mysterious powerUp for now (see you at v3.0.0!!)
+    [01:41 AM 18/Dec/2023] added mango and kiwi icons for food
+
+------------------------ Committed [02:00 AM 18/Dec/2023] v2.0.0 stable -----------------------

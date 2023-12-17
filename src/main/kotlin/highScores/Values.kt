@@ -30,18 +30,20 @@ fun loadHighScores(): MutableList<HighScoreData>? {
         val json = file.readText()
         val listType: Type = object : TypeToken<List<HighScoreData>>() {}.type
         gson.fromJson(json, listType)
-    } else null
+    } else mutableListOf()
 }
 
-fun loadSortedHighScores(): MutableList<HighScoreData>? {
+fun loadSortedHighScores(): MutableList<HighScoreData> {
     val dir = File(System.getProperty("user.home"), "SnakeKt")
     val file = File(dir, JSON_HIGHSCORES)
-    return if (file.exists()) {
+    val scoreData: MutableList<HighScoreData>
+    if (file.exists()) {
         val gson = Gson()
         val json = file.readText()
         val listType: Type = object : TypeToken<List<HighScoreData>>() {}.type
-        gson.fromJson(json, listType)
-    } else null
+        scoreData = gson.fromJson(json, listType)
+    } else scoreData = mutableListOf()
+    return scoreData.sortedByDescending { it.highScore }.take(10).toMutableList()
 }
 
 fun getHighScore(): HighScoreData {
@@ -52,17 +54,9 @@ fun getHighScore(): HighScoreData {
         HighScoreData(0, 0)
     }
 }
-fun arrangeAndRefresh() {
-    scoresTableModel.clearScores()
-    val highScores = loadHighScores()
-    highScores?.sortedByDescending { it.highScore }?.forEach { scoresTableModel.addScore(it) }
-}
+
 fun refreshScores(sort: Boolean = false) {
     scoresTableModel.clearScores()
-    val highScores = loadHighScores()
-    if (sort)
-        highScores?.sortedByDescending { it.highScore }?.forEach { scoresTableModel.addScore(it) }
-    else
-        highScores?.forEach { scoresTableModel.addScore(it) }
-
+    val highScores = if (sort) loadSortedHighScores() else loadHighScores()!!
+    highScores.forEach { scoresTableModel.addScore(it) }
 }

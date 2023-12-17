@@ -4,10 +4,13 @@ import game.logic.showPowerUp
 import highScores.getHighScore
 import utils.SCREEN_HEIGHT
 import utils.SCREEN_WIDTH
+import utils.getImage
 import java.awt.Color
 import java.awt.Font
 import java.awt.Graphics
 
+
+val mysteriousPowerUp = getImage("/PowerUp/mysterious.png")
 fun draw(g: Graphics) {
 
     drawBorder(g)
@@ -17,7 +20,8 @@ fun draw(g: Graphics) {
     }
     g.drawImage(foodImgs[foodIndex], foodX, foodY, UNIT_SIZE, UNIT_SIZE, null)
     if (showPowerUp()) {
-        g.drawImage(powerUpImgs[powerUpIndex], powerUpX, powerUpY, POWER_UP_UNIT_SIZE, POWER_UP_UNIT_SIZE, null)
+//        g.drawImage(powerUpImgs[powerUpIndex], powerUpX, powerUpY, POWER_UP_UNIT_SIZE, POWER_UP_UNIT_SIZE, null)
+        g.drawImage(mysteriousPowerUp, powerUpX, powerUpY, POWER_UP_UNIT_SIZE, POWER_UP_UNIT_SIZE, null)
         powerUpTimer(g)
     }
     for (i in 0..<bodyParts) {
