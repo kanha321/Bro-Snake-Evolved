@@ -78,6 +78,8 @@ val foodImgs = arrayOf(
     getImage("/Food/banana.png"),
     getImage("/Food/cherry.png"),
     getImage("/Food/strawberry.png"),
+    getImage("/Food/mango.png"),
+    getImage("/Food/kiwi.png"),
 )
 
 val powerUpImgs = arrayOf(

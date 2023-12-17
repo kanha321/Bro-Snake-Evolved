@@ -27,6 +27,8 @@ class CellRenderer(private val isHeader: Boolean) : DefaultTableCellRenderer() {
         if (isHeader) {
             if (cellComponent is JComponent) {
                 cellComponent.border = BorderFactory.createLineBorder(Color(0, 25, 0), 1)
+//                cellComponent.background = Color(0, 50, 0)
+//                cellComponent.foreground = Color(120, 255, 120)
             }
         } else {
             if (cellComponent is JComponent) {

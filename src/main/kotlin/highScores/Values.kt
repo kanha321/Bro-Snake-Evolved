@@ -30,7 +30,7 @@ fun loadHighScores(): MutableList<HighScoreData>? {
         val json = file.readText()
         val listType: Type = object : TypeToken<List<HighScoreData>>() {}.type
         gson.fromJson(json, listType)
-    } else null
+    } else mutableListOf()
 }
 
 fun loadSortedHighScores(): MutableList<HighScoreData> {
