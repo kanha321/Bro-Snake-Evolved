@@ -77,4 +77,5 @@
     [04:13 PM 17/Dec/2023] added mouse click action on table header to sort scores
     [06:24 PM 17/Dec/2023] high scores table finished (I Guess) (might change the colors in future)
                                                                                    [very close to stable version 2.0.0]
+                                                                                   [needs to clean up powerup stuffs]
 ------------------------ Committed [06:32 PM 17/Dec/2023] v2.0.0 beta 1.2.2 -----------------------
