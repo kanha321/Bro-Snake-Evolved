@@ -1,15 +1,16 @@
 package home
 
+import custom.ImagePanel
+import custom.TransparentButton
 import game.logic.restartGame
 import game.timer
-import highScores.ScoresPanel
 import panelManagement.PanelManager
-import java.util.stream.IntStream.range
+import utils.SnakePanel
 import javax.swing.JPanel
 import kotlin.system.exitProcess
 
+private val homePanel = HomePanel()
 fun createHomePanel(gamePanel: game.Panel, scoresPanel: JPanel): HomePanel {
-    val homePanel = HomePanel()
     homePanel.startButton.addActionListener {
         PanelManager.switchPanel(gamePanel)
         restartGame()

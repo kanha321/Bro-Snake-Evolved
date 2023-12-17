@@ -58,8 +58,13 @@ class TransparentButton(
             }
 
             override fun mouseReleased(e: MouseEvent?) {
-                color = getColor(R, G, B, transparencyHover)
-                repaint()
+//                color = getColor(R, G, B, transparencyHover)
+//                repaint()
+                color = if (e!!.x in 0..width && e.y in 0..height) {
+                    getColor(R, G, B, transparencyHover)
+                } else {
+                    getColor(R, G, B, transparencyDef)
+                }
             }
         })
     }
