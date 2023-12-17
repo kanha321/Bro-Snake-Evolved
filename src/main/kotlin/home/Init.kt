@@ -4,6 +4,7 @@ import custom.ImagePanel
 import custom.TransparentButton
 import game.logic.restartGame
 import game.timer
+import highScores.refreshScores
 import panelManagement.PanelManager
 import utils.SnakePanel
 import javax.swing.JPanel
@@ -21,6 +22,7 @@ fun createHomePanel(gamePanel: game.Panel, scoresPanel: JPanel): HomePanel {
     }
     homePanel.highScoreButton.addActionListener {
         PanelManager.switchPanel(scoresPanel)
+        refreshScores(true)
     }
 
     return homePanel
