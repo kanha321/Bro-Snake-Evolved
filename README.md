@@ -39,7 +39,7 @@ And many more under the hood changes and bug fixes...
   - Shows the number of bonus apples eaten
   
 
-- Game menu screen at start with the following features:
+- game menu screen at start with the following features:
   - New game
   - Resume game (maybe)
   - High scores

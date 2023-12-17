@@ -1,3 +1,3 @@
 fun main() {
-    GameFrame()
+    utils.init()
 }

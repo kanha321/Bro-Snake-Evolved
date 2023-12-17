@@ -1,0 +1,75 @@
+[07:47 PM 11/Dec/2023]  v2.0.0 preparation 2
+    added multiple panels
+    added background graphics for home screen
+    random foods and powerUps graphics
+    re-organized code (added util package and shifted some properties like SCREEN_WIDTH and SCREEN_HEIGHT to the utils.Values)
+    re-organized resources (added resources package)
+    added SnakePanel class
+
+[08:28 PM 13/Dec/2023] v2.0.0 beta 1
+    back to v2.0.0 preparation 2
+    preparation 3 dumped
+    fixed minor bugs
+    incomplete HomeScreen for now
+    no issues in the game
+
+[10:19 PM 13/Dec/2023] v2.0.0 beta 1.0.1
+    added HomePanel form
+    added TransparentButton
+    added ImagePanel
+    *not yet tested*
+
+[12:16 AM 14/Dec/2023] v2.0.0 beta 1.0.2
+    so lost, I'm faded ╥﹏╥
+
+[02:25 PM 14/Dec/2023] v2.0.0 beta 1.0.3
+    added Forms correctly (I think)
+    now forms are Panels instead of JFrame
+    next step is to add Panel switching
+    game part is not touched it should work (I guess)
+
+[05:37 PM 14/Dec/2023] v2.0.0 beta 1.1.0    ---    (☺☻ Panel Manager ☻☺)
+    added PanelManager which creates a stack of panels to easily switch between them
+    added PanelHandler which handles the basic operations of panel (only because panels are written in java)
+    everything implemented working perfectly for now (I guess)
+    next step is to add HighScore feature and then settings part
+
+[07:10 PM 14/Dec/2023] v2.0.0 beta 1.1.1
+    fixed backgroundImage scaling issue in portrait mode
+
+----------------------------------------------------------------------------------------------------------------
+
+    [08:44 PM 14/Dec/2023] gameOver Form created (incomplete)
+    [01:51 AM 15/Dec/2023] Gradle added to project
+
+------------------ Committed and pushed [02:06 AM 15/Dec/2023] v2.0.0 beta 1.1.2 -----------------
+
+    [02:50 AM 15/Dec/2023] removed Gradle (fixed the blunder) thanks git♥
+
+------------------ Committed and pushed -f [03:02 AM 15/Dec/2023] v2.0.0 beta 1.1.2 (hotfix)-----------------
+
+    [10:07 PM 15/Dec/2023] added borders (made playable area smaller, to fix some minor bugs, color will be changed later)
+    [11:18 PM 15/Dec/2023] made powerUps and food appear correctly inside border
+    [01:06 AM 16/Dec/2023] fixed powerUp appearing on snake's body (I guess, worked fine on testing)
+    [01:16 AM 16/Dec/2023] no need to call "panel.requestFocusInWindow()" to get key events, added that on PanelManager
+
+------------------------ Committed [01:19 AM 16/Dec/2023] v2.0.0 beta 1.1.3 -----------------------
+
+    [02:12 AM 16/Dec/2023] added some functions to Panel Manager (maybe useful later)
+    [02:40 AM 16/Dec/2023] added escape key functionality to every panel (by modifying SnakePanel)
+
+
+------------------- Committed and pushed [03:16 AM 16/Dec/2023] v2.0.0 beta 1.1.4 -------------------
+
+    [09:27 AM 16/Dec/2023] added json library
+    [09:49 AM 16/Dec/2023] added ability to save high score (displays at the game over panel)
+    [10:11 AM 16/Dec/2023] added Gson library and created highScore data class to save score with time
+    [11:20 AM 16/Dec/2023] separated basic logic and powerUp logic
+    [02:22 PM 16/Dec/2023] added score history along with high scores using json array
+
+---------------------------------------[High Scores]-----------------------------------------------
+------------------- Committed and pushed [02:31 PM 16/Dec/2023] v2.0.0 beta 1.2.0 -----------------
+
+    [02:08 AM 17/Dec/2023] fixed new high score appearing at the bottom (many more changes needed to highScore panel)
+
+------------------------ Committed [02:15 AM 17/Dec/2023] v2.0.0 beta 1.2.1 -----------------------
