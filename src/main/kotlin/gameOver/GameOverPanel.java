@@ -2,12 +2,13 @@ package gameOver;
 
 import custom.GameOverBackgroundPanel;
 
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 public class GameOverPanel {
     private JPanel panel1;
 
-    public GameOverPanel() {}
+    public GameOverPanel(){}
 
     private void createUIComponents() {
         panel1 = new GameOverBackgroundPanel();

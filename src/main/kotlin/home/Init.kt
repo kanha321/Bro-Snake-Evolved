@@ -14,6 +14,7 @@ private val homePanel = HomePanel()
 fun createHomePanel(gamePanel: game.Panel, scoresPanel: JPanel): HomePanel {
     homePanel.startButton.addActionListener {
         PanelManager.switchPanel(gamePanel)
+        gamePanel.startSound()
         restartGame()
         timer!!.start()
     }

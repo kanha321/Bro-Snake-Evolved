@@ -4,12 +4,11 @@ import utils.SnakePanel
 import utils.getImage
 import java.awt.Graphics
 import java.awt.Image
-import javax.swing.JPanel
 
 open class ImagePanel(width: Int, height: Int) : SnakePanel() {
-    private val pImage = getImage("/HomeScreen/portrait_4k.jpeg", this::class.java)
-    private val lImage = getImage("/HomeScreen/landscape_4k.jpeg", this::class.java)
-    private val sImage = getImage("/HomeScreen/square_4k.jpeg", this::class.java)
+    private val pImage = getImage("/HomeScreen/portrait_4k.jpeg")
+    private val lImage = getImage("/HomeScreen/landscape_4k.jpeg")
+    private val sImage = getImage("/HomeScreen/square_4k.jpeg")
     // get panel dimensions
     private var image =
         if (width > height) lImage

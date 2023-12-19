@@ -99,7 +99,7 @@ fun move() {
     tailDirection = getDirection(bodyParts - 1)
 }
 
-fun die(gameOverPanel: GameOverPanel) {
+fun die(gameOverPanel: GameOverPanel, panel: Panel) {
     bodyParts--
     if (bodyParts == 0) {
         saveScore(HighScoreData(scoreCount, System.currentTimeMillis()))
@@ -107,6 +107,7 @@ fun die(gameOverPanel: GameOverPanel) {
         gameOver = true
         running = false
         timer!!.stop()
+        panel.stopSound()
         PanelManager.switchPanel(gameOverPanel.panel)
     }
 }

@@ -6,6 +6,7 @@ import highScores.loadHighScores
 import home.HomePanel
 import home.createHomePanel
 import panelManagement.PanelManager
+import javax.sound.sampled.Clip
 import javax.swing.JFrame
 
 

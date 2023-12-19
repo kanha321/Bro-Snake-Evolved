@@ -8,10 +8,19 @@ import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.awt.event.KeyAdapter
 import java.awt.event.KeyEvent
+import javax.sound.sampled.AudioSystem
+import javax.sound.sampled.Clip
 
-class Panel(private var gameOverPanel: GameOverPanel) : SnakePanel(), ActionListener {
+class Panel(private val gameOverPanel: GameOverPanel) : SnakePanel(), ActionListener {
+
+    private val url = {}.javaClass.getResource("/Music/jungle1.wav")
+    private val jungle1 = AudioSystem.getAudioInputStream(url)
+    private val clip = AudioSystem.getClip()
 
     init {
+        clip.open(jungle1)
+        clip.loop(Clip.LOOP_CONTINUOUSLY)
+
         forceInit()
 //        running = true
         val keyAd = Controls()
@@ -25,19 +34,28 @@ class Panel(private var gameOverPanel: GameOverPanel) : SnakePanel(), ActionList
         draw(g)
     }
 
+    fun startSound() {
+        clip.start()
+    }
+
+    fun stopSound() {
+        clip.stop()
+    }
+
     override fun actionPerformed(e: ActionEvent?) {
         if (running) {
             if (speedCheck == 22 - SPEED * 3 || speedCheck == 0) {
-                if (isDead) die(gameOverPanel) else move()
+                if (isDead) die(gameOverPanel, this) else move()
                 speedCheck = 0
             }
+            if (isDead) clip.stop()
             speedCheck++
             checkFood()
             if (showPowerUp()) {
                 checkPowerUp()
                 if (!isDead)
                     powerUpTimeLeft -= DELAY
-                if (powerUpTimeLeft <= 0){
+                if (powerUpTimeLeft <= 0) {
                     appleAfterPowerUp = 0
                     newPowerUp()
                 }
@@ -90,6 +108,7 @@ class Panel(private var gameOverPanel: GameOverPanel) : SnakePanel(), ActionList
                     restartGame()
                     startGame(this@Panel)
                 }
+
                 KeyEvent.VK_F9 -> {
                     isDead = true
                 }

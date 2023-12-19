@@ -1,5 +1,6 @@
 package gameOver
 
+import game.Panel
 import game.logic.restartGame
 import game.timer
 import panelManagement.PanelManager
