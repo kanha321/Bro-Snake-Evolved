@@ -85,3 +85,7 @@
     [01:41 AM 18/Dec/2023] added mango and kiwi icons for food
 
 ------------------------ Committed [02:00 AM 18/Dec/2023] v2.0.0 stable -----------------------
+
+    [04:04 PM 19/Dec/2023] Recompiled with jdk 17 LTS (17.0.9 Intellij) to extend support
+
+------------------ Committed and Pushed [04:08 PM 19/Dec/2023] v2.0.1 stable ------------------
