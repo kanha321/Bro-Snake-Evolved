@@ -8,9 +8,10 @@ The old nokia snake game, recreated in Kotlin. This snake game is originally cre
 - Snake can die if it hits the wall or itself
 - Snake can grow when it eats food
 
-#### That's it..., It was a very basic snake game. So I decided to add some more features to it:
 
-## New Features added: (From Nokia, of course) [@Releases](https://github.com/kanha321/Bro-Snake-Evolved/releases)
+#### That's it..., It was a very basic snake game ([wanna checkout?](https://www.mediafire.com/file/okwltzh3u4jowr4/Nokia-snakeGame_.jar/file)). So I decided to add some more features to it:
+
+## New Features added: Check [@Releases](https://github.com/kanha321/Bro-Snake-Evolved/releases)
 
 # Requirements
 #### JDK 17 (Jar Compiled with jdk 17, might also work with older versions)
