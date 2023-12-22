@@ -18,7 +18,7 @@ fun createScoresPanel(highScores: List<HighScoreData>): ScoresPanel {
     scoresPanel.scoresTable.tableHeader.preferredSize = Dimension(SCREEN_WIDTH, 50)
     scoresPanel.scoresTable.rowHeight = 35
     scoresPanel.scoresTable.setDefaultRenderer(Any::class.java, CellRenderer(false))
-    scoresPanel.scoresTable.tableHeader.setDefaultRenderer(CellRenderer(true))
+    scoresPanel.scoresTable.tableHeader.defaultRenderer = CellRenderer(true)
     scoresPanel.scoresTable.tableHeader.addMouseListener(
         object: MouseAdapter() {
             override fun mouseClicked(e: java.awt.event.MouseEvent?) {

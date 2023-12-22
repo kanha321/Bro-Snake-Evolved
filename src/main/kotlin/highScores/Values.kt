@@ -22,15 +22,23 @@ fun saveScore(highScoreData: HighScoreData) {
     allScore!!.add(highScoreData)
 }
 
+fun deleteFile() {
+    val dir = File(System.getProperty("user.home"), "SnakeKt")
+    val file = File(dir, JSON_HIGHSCORES)
+    file.delete()
+}
+
 fun loadHighScores(): MutableList<HighScoreData>? {
     val dir = File(System.getProperty("user.home"), "SnakeKt")
     val file = File(dir, JSON_HIGHSCORES)
-    return if (file.exists()) {
+    val scoreData: MutableList<HighScoreData>?
+    if (file.exists()) {
         val gson = Gson()
         val json = file.readText()
         val listType: Type = object : TypeToken<List<HighScoreData>>() {}.type
-        gson.fromJson(json, listType)
-    } else mutableListOf()
+        scoreData = gson.fromJson(json, listType)
+    } else scoreData = mutableListOf()
+    return scoreData?.reversed()?.toMutableList()
 }
 
 fun loadSortedHighScores(): MutableList<HighScoreData> {

@@ -33,7 +33,7 @@ var powerUpY = 0
 var powerUpIndex = -1
 
 // speed TODO(needs improvement)
-const val SPEED = 6 // MAX 7
+const val SPEED = 5 // MAX 7
 var speedCheck = 0
 
 // food

@@ -38,6 +38,21 @@ fun loadJSONData() {
     allScore = loadHighScores()
 }
 
+fun takeYNInput(asErr: Boolean = true): Boolean {
+    var input: String?
+    do {
+        input = readlnOrNull()
+        when (input) {
+            "Y", "y" -> return true
+            "N", "n" -> return false
+            else -> {
+                if (asErr) System.err.println("Invalid input, try again..")
+                else println("Invalid input, try again..")
+            }
+        }
+    } while (true)
+}
+
 fun init() {
     SnakeFrame()
     Thread{

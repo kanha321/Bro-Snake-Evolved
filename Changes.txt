@@ -89,3 +89,9 @@
     [04:04 PM 19/Dec/2023] Recompiled with jdk 17 LTS (17.0.9 Intellij) to extend support
 
 ------------------ Committed and Pushed [04:08 PM 19/Dec/2023] v2.0.1 stable ------------------
+
+    [12:31 AM 23/Dec/2023] decreased speed for now
+    [01:27 AM 23/Dec/2023] fixed random Glitches that was causing error in code
+    [02:02 AM 23/Dec/2023] reversed the order when sorted by time now it shows the most recent at top
+
+------------------ Committed and Pushed [02:05 AM 23/Dec/2023] v2.0.2 stable ------------------

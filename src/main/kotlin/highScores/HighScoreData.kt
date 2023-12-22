@@ -1,6 +1,3 @@
 package highScores
 
-data class HighScoreData(
-    var highScore: Int,
-    var time: Long
-)
+data class HighScoreData(var highScore: Int, var time: Long)
